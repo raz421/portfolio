@@ -3,15 +3,13 @@ import { CheckCircle2 } from "lucide-react";
 import BentoCard from "../BentoCard";
 
 export default function AboutCard() {
-  const aboutPoints = [
-    "I build interfaces that feel clean, fast, and trustworthy from the first interaction.",
-    "My focus is the mix of design systems, performance, and modern JavaScript.",
-  ];
+  const aboutText =
+    "I am a Full-Stack Web Developer passionate about combining AI and Web Development to create intelligent, scalable applications. Experienced in React, Next.js, Node.js, and MongoDB—building clean, reliable backends paired with intuitive user interfaces. Working with AI-based systems including voice analysis and machine learning models to push the boundaries of what web applications can do.";
 
   const strengths = [
-    "Clean & Intuitive UI",
-    "Performance Obsessed",
-    "Visual Hierarchy Mastery",
+    "React & Next.js",
+    "AI Integration",
+    "Full-Stack Development",
   ];
 
   return (
@@ -38,26 +36,21 @@ export default function AboutCard() {
             About Me
           </h2>
           <p className="max-w-lg text-sm font-medium text-white/80 leading-relaxed">
-            Product-minded Frontend Developer
+            Full-Stack Developer | AI + Web Development
           </p>
         </div>
 
         {/* Main content */}
         <div className="flex flex-1 flex-col justify-between gap-8">
-          {/* Description paragraphs */}
-          <div className="space-y-5">
-            {aboutPoints.map((point, index) => (
-              <motion.p
-                key={point}
-                className="text-base leading-relaxed text-white/75 max-w-2xl"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
-              >
-                {point}
-              </motion.p>
-            ))}
-          </div>
+          {/* Description paragraph */}
+          <motion.p
+            className="text-base leading-relaxed text-white/75 max-w-2xl"
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            {aboutText}
+          </motion.p>
 
           {/* Strengths grid */}
           <motion.div

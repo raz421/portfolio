@@ -9,29 +9,29 @@ export const smoothEase: [number, number, number, number] = [
 ];
 
 export const pageTransition: Variants = {
-  hidden: { opacity: 0, scale: 0.985, filter: "blur(10px)" },
+  hidden: { opacity: 0, scale: 0.985, filter: "blur(8px)" },
   show: {
     opacity: 1,
     scale: 1,
     filter: "blur(0px)",
     transition: {
-      duration: 1.1,
+      duration: 0.5,
       ease: smoothEase,
       when: "beforeChildren",
-      staggerChildren: 0.1,
-      delayChildren: 0.08,
+      staggerChildren: 0.04,
+      delayChildren: 0.02,
     },
   },
 };
 
 export const revealUp: Variants = {
-  hidden: { opacity: 0, y: 36, scale: 0.99, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 24, scale: 0.99, filter: "blur(6px)" },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
     filter: "blur(0px)",
-    transition: { duration: 0.8, ease: smoothEase },
+    transition: { duration: 0.45, ease: smoothEase },
   },
 };
 
@@ -39,17 +39,17 @@ export const staggerContainer: Variants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.1,
+      staggerChildren: 0.04,
+      delayChildren: 0.02,
     },
   },
 };
 
 export const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 14 },
+  hidden: { opacity: 0, y: 10 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: smoothEase },
+    transition: { duration: 0.35, ease: smoothEase },
   },
 };

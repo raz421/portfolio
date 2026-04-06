@@ -52,15 +52,15 @@ export default function Home() {
       gsap.utils.toArray<HTMLElement>(".story-section").forEach((section) => {
         gsap.fromTo(
           section,
-          { autoAlpha: 0, y: 72 },
+          { autoAlpha: 0, y: 50 },
           {
             autoAlpha: 1,
             y: 0,
-            duration: 1,
-            ease: "power3.out",
+            duration: 0.5,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 78%",
+              start: "top 75%",
               once: true,
             },
           },

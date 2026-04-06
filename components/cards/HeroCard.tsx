@@ -119,11 +119,11 @@ export default function HeroCard() {
           variants={staggerItem}
         >
           <p className="text-xl leading-relaxed text-white/90 font-medium">
-            I build premium digital experiences with clean code, strategic
+            I build websites with clean code, strategic
             design, and attention to every detail.
           </p>
           <p className="text-base leading-relaxed text-white/70">
-            Specializing in React, Next.js, and modern web technologies—creating
+            Specializing in Ai,React, Next.js,Node js, and modern web technologies—creating
             interfaces that are both beautiful and performant. Every project
             reflects a commitment to quality, user experience, and technical
             excellence.
@@ -138,7 +138,7 @@ export default function HeroCard() {
             <p className="text-[0.75rem] uppercase tracking-[0.15em] text-white/50 font-semibold">
               Experience
             </p>
-            <p className="mt-1 text-2xl font-bold text-white">5+</p>
+            <p className="mt-1 text-2xl font-bold text-white">2+</p>
             <p className="text-xs text-white/60">Years Building</p>
           </div>
           <div className="border-l-2 border-indigo-500/50 pl-4">

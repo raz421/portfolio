@@ -32,7 +32,7 @@ export default function SiteFooter() {
       initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.16 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="site-footer-panel relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 shadow-[0_30px_100px_-45px_rgba(15,23,42,1)] md:p-8">
         <div className="absolute -right-10 top-0 h-56 w-56 rounded-full bg-accent/10 blur-3xl" />

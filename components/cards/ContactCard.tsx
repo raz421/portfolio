@@ -87,7 +87,7 @@ export default function ContactCard() {
           {/* Response Time Card */}
           <motion.div
             className="shrink-0 rounded-2xl border border-rose-400/30 bg-gradient-to-br from-rose-500/15 to-transparent p-4 text-center backdrop-blur-sm hover:border-rose-400/50 transition-all"
-            whileHover={{ scale: 1.05, y: -2 }}
+            whileHover={{ scale: 1.04, y: -2 }}
           >
             <div className="flex items-center justify-center gap-2 mb-2">
               <Clock size={16} className="text-white/60" />

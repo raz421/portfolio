@@ -20,14 +20,14 @@ export default function ProfileCard() {
           {/* Profile Image with Enhanced Ring */}
           <motion.div
             className="relative"
-            whileHover={{ scale: 1.08 }}
-            transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
+            whileHover={{ scale: 1.06 }}
+            transition={{ duration: 0.3, type: "spring", stiffness: 380 }}
           >
             {/* Animated outer glow */}
             <motion.div
               className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-indigo-400 blur-xl opacity-50"
               animate={{ opacity: [0.4, 0.8, 0.4] }}
-              transition={{ duration: 3, repeat: Infinity }}
+              transition={{ duration: 2.5, repeat: Infinity }}
             />
 
             {/* Image ring with multiple borders */}
@@ -45,7 +45,7 @@ export default function ProfileCard() {
             <motion.div
               className="absolute bottom-0 right-0 h-6 w-6 rounded-full border-3 border-slate-950 bg-emerald-400 shadow-[0_0_20px_rgba(52,211,153,0.6)]"
               animate={{ scale: [1, 1.15, 1] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
+              transition={{ duration: 2, repeat: Infinity }}
             />
           </motion.div>
 
