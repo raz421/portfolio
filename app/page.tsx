@@ -104,139 +104,142 @@ export default function Home() {
   };
 
   return (
-    <main
-      ref={rootRef}
-      id="top"
-      className="relative min-h-screen overflow-hidden"
-      onPointerMove={handlePointerMove}
-      onPointerLeave={() => {
-        spotlightX.set(56);
-        spotlightY.set(16);
-      }}
-    >
-      <motion.div
-        className="pointer-events-none absolute inset-0"
-        style={{ y: bgY }}
-      >
-        <div className="aurora-float absolute left-[-12%] top-[-10%] h-80 w-80 rounded-full bg-accent/20 blur-3xl" />
-        <div className="aurora-float absolute right-[-10%] top-[14%] h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="aurora-float absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(2,6,23,0.28)_40%,rgba(2,6,23,0.7)_100%)]" />
-      </motion.div>
-
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-70 mix-blend-screen"
-        style={{ backgroundImage: spotlight }}
-      />
-
+    <>
       <SiteHeader />
-
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-[0.22] will-change-transform"
-        animate={prefersReducedMotion ? undefined : { rotate: 360 }}
-        transition={
-          prefersReducedMotion
-            ? undefined
-            : { duration: 80, repeat: Infinity, ease: "linear" }
-        }
-        style={{
-          backgroundImage:
-            "conic-gradient(from 180deg at 50% 50%, rgba(99,102,241,0.18), rgba(34,211,238,0.1), rgba(99,102,241,0.18))",
-          filter: "blur(72px)",
+      <main
+        ref={rootRef}
+        id="top"
+        className="relative min-h-screen"
+        onPointerMove={handlePointerMove}
+        onPointerLeave={() => {
+          spotlightX.set(56);
+          spotlightY.set(16);
         }}
-      />
-
-      <div className="relative mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8 pt-32">
-        <motion.div variants={pageTransition} initial="hidden" animate="show">
-          <motion.section
-            ref={heroRef}
-            className="story-section mt-12"
-            variants={revealUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <div data-parallax>
-              <HeroCard />
-            </div>
-          </motion.section>
-
-          {/* PREMIUM GRID SECTION 1 */}
-          <motion.section
-            className="story-section mt-12 space-y-6"
-            variants={revealUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.14 }}
-            data-parallax
-          >
-            {/* First Row: Profile + Skills */}
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-              <div className="lg:col-span-1">
-                <ProfileCard />
-              </div>
-              <div className="lg:col-span-2">
-                <SkillsCard />
-              </div>
-            </div>
-
-            {/* Second Row: About (Full Width) */}
-            <div className="grid grid-cols-1 gap-6">
-              <AboutCard />
-            </div>
-
-            {/* Third Row: Location + Music */}
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-              <div>
-                <LocationCard />
-              </div>
-              <div>
-                <MusicCard />
-              </div>
-            </div>
-          </motion.section>
-
-          {/* PROJECT SHOWCASE SECTION */}
-          <motion.section
-            className="story-section mt-16 space-y-8"
-            variants={revealUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            {/* Full Width Project Card */}
-            <div>
-              <ProjectCard />
-            </div>
-
-            {/* Contact Card */}
-            <div>
-              <ContactCard />
-            </div>
-          </motion.section>
-
+      >
+        <div className="fixed inset-0 pointer-events-none">
           <motion.div
-            ref={projectRef}
-            className="story-section mt-8"
-            variants={revealUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            className="pointer-events-none absolute inset-0"
+            style={{ y: bgY }}
           >
-            <ProjectsSection />
+            <div className="aurora-float absolute left-[-12%] top-[-10%] h-80 w-80 rounded-full bg-accent/20 blur-3xl" />
+            <div className="aurora-float absolute right-[-10%] top-[14%] h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
+            <div className="aurora-float absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(2,6,23,0.28)_40%,rgba(2,6,23,0.7)_100%)]" />
           </motion.div>
 
           <motion.div
-            className="story-section"
-            variants={revealUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.14 }}
-          >
-            <SiteFooter />
+            className="pointer-events-none absolute inset-0 opacity-70 mix-blend-screen"
+            style={{ backgroundImage: spotlight }}
+          />
+
+          <motion.div
+            className="pointer-events-none absolute inset-0 opacity-[0.22] will-change-transform"
+            animate={prefersReducedMotion ? undefined : { rotate: 360 }}
+            transition={
+              prefersReducedMotion
+                ? undefined
+                : { duration: 80, repeat: Infinity, ease: "linear" }
+            }
+            style={{
+              backgroundImage:
+                "conic-gradient(from 180deg at 50% 50%, rgba(99,102,241,0.18), rgba(34,211,238,0.1), rgba(99,102,241,0.18))",
+              filter: "blur(72px)",
+            }}
+          />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8 pt-32">
+          <motion.div variants={pageTransition} initial="hidden" animate="show">
+            <motion.section
+              ref={heroRef}
+              className="story-section mt-12"
+              variants={revealUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <div data-parallax>
+                <HeroCard />
+              </div>
+            </motion.section>
+
+            {/* PREMIUM GRID SECTION 1 */}
+            <motion.section
+              className="story-section mt-12 space-y-6"
+              variants={revealUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.14 }}
+              data-parallax
+            >
+              {/* First Row: Profile + Skills */}
+              <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+                <div className="lg:col-span-1">
+                  <ProfileCard />
+                </div>
+                <div className="lg:col-span-2">
+                  <SkillsCard />
+                </div>
+              </div>
+
+              {/* Second Row: About (Full Width) */}
+              <div className="grid grid-cols-1 gap-6">
+                <AboutCard />
+              </div>
+
+              {/* Third Row: Location + Music */}
+              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                <div>
+                  <LocationCard />
+                </div>
+                <div>
+                  <MusicCard />
+                </div>
+              </div>
+            </motion.section>
+
+            {/* PROJECT SHOWCASE SECTION */}
+            <motion.section
+              className="story-section mt-16 space-y-8"
+              variants={revealUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {/* Full Width Project Card */}
+              <div>
+                <ProjectCard />
+              </div>
+
+              {/* Contact Card */}
+              <div>
+                <ContactCard />
+              </div>
+            </motion.section>
+
+            <motion.div
+              ref={projectRef}
+              className="story-section mt-8"
+              variants={revealUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <ProjectsSection />
+            </motion.div>
+
+            <motion.div
+              className="story-section"
+              variants={revealUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.14 }}
+            >
+              <SiteFooter />
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </div>
-    </main>
+        </div>
+      </main>
+    </>
   );
 }

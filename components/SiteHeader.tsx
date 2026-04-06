@@ -115,17 +115,17 @@ export default function SiteHeader() {
   };
 
   return (
-    <motion.header
-      initial={{ opacity: 0, y: -16, filter: "blur(10px)" }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-      }}
-      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="sticky top-0 z-50"
-    >
-      <div className="rounded-[2rem] border border-white/10 bg-slate-950/80 px-4 py-4 shadow-[0_24px_80px_-40px_rgba(15,23,42,0.95)] backdrop-blur-2xl sm:px-5">
+    <header className="sticky top-0 z-50 w-full">
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(10px)" }}
+        animate={{
+          opacity: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-5"
+      >
+        <div className="rounded-[2rem] border border-white/10 bg-slate-950/80 px-4 py-4 shadow-[0_24px_80px_-40px_rgba(15,23,42,0.95)] backdrop-blur-2xl sm:px-5">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-3 sm:gap-4">
             <motion.div
@@ -209,7 +209,8 @@ export default function SiteHeader() {
             </motion.nav>
           </motion.div>
         </div>
-      </div>
-    </motion.header>
+        </div>
+      </motion.div>
+    </header>
   );
 }
