@@ -21,7 +21,7 @@ export default function BentoCard({
       viewport={{ once: true, amount: 0.24 }}
       whileHover={{ scale: 1.004, y: -1 }}
       whileTap={{ scale: 0.98 }}
-      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       {...props}
     >
       {children}

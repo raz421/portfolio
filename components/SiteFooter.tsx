@@ -17,19 +17,34 @@ const footerLinks = [
 export default function SiteFooter() {
   const year = new Date().getFullYear();
 
+  const linkVariants = {
+    hidden: { opacity: 0, y: 14 },
+    show: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.12 + index * 0.08, duration: 0.45 },
+    }),
+  };
+
   return (
     <motion.footer
       className="mt-16"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, amount: 0.16 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 shadow-[0_30px_100px_-45px_rgba(15,23,42,1)] md:p-8">
+      <div className="site-footer-panel relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 shadow-[0_30px_100px_-45px_rgba(15,23,42,1)] md:p-8">
         <div className="absolute -right-10 top-0 h-56 w-56 rounded-full bg-accent/10 blur-3xl" />
         <div className="absolute -left-12 bottom-0 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl" />
 
         <div className="relative grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -18 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          >
             <p className="text-xs uppercase tracking-[0.35em] text-white/40">
               Closing note
             </p>
@@ -51,19 +66,25 @@ export default function SiteFooter() {
                 Back to top
               </Button>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+          <motion.div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
             {footerLinks.map((link) => {
               const Icon = link.icon;
 
               return (
-                <a
+                <motion.a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 text-white/75 transition-all hover:border-white/20 hover:bg-white/[0.07]"
+                  className="site-footer-link group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 text-white/75 transition-all hover:border-white/20 hover:bg-white/[0.07]"
+                  variants={linkVariants}
+                  custom={footerLinks.indexOf(link)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, amount: 0.2 }}
+                  whileHover={{ y: -3, x: 4 }}
                 >
                   <Icon
                     size={18}
@@ -75,10 +96,10 @@ export default function SiteFooter() {
                     </p>
                     <p className="mt-1 text-sm text-white/80">Open channel</p>
                   </div>
-                </a>
+                </motion.a>
               );
             })}
-          </div>
+          </motion.div>
         </div>
 
         <div className="relative mt-8 flex flex-col gap-3 border-t border-white/10 pt-5 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
